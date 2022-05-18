@@ -1,0 +1,99 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'about'
+	- var pageName = 'About Us'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'A few words about our design studio',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Blurb minimal
+	section.section.section-lg.bg-default
+		.container
+			.row.row-40.justify-content-between
+				.col-lg-7
+					h4.custom-title Who we are
+					p.big Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					p.big Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis
+					.row.row-40.align-items-center.offset-custom-2
+						.col-md-6.color-black
+							+counter-boxed({
+								addClass: 'box-counter-2',
+								value: '15',
+								icon: 'linearicons-trophy2',
+								title: 'International awards'
+							})
+						.col-md-6
+							ul.list-marked-2
+								li: span.big 6 National Awards
+								li: span.big 5 Best Service Awards
+								li: span.big 4 International Awards
+					p.big Volutpat odio facilisis mauris sit amet massa vitae tortor. Vitae et leo duis ut diam quam. Enim neque volutpat ac tincidunt vitae semper. Pellentesque elit eget gravida cum sociis natoque penatibus et magnis.
+					.img-wrap-1
+						+jpg('about-us-1-650x325')
+					.row.row-30.row-xxl-55
+						.col-sm-6.col-lg-6.wow.fadeInLeft(data-wow-delay="0.2s")
+							+blurb-minimal({
+								icon: 'linearicons-pencil-ruler',
+								title: 'Qualified Team',
+								exeption: 'Our company is comprised of the best painting experts.'
+							})
+
+						.col-sm-6.col-lg-6.wow.fadeInLeft
+							+blurb-minimal({
+
+								icon: 'linearicons-color-sampler',
+								title: 'Years of Experience',
+								exeption: 'With 17+ years of experience, we provide the best services.'
+							})
+
+						.col-sm-6.col-lg-6.wow.fadeInLeft(data-wow-delay="0.4s")
+							+blurb-minimal({
+								icon: 'linearicons-cube',
+								title: 'Color Consulting',
+								exeption: 'Get a free color consultation at any time from our team.'
+							})
+
+						.col-sm-6.col-lg-6.wow.fadeInLeft(data-wow-delay="0.2s")
+							+blurb-minimal({
+								icon: 'linearicons-broom',
+								title: 'Price Guarantee',
+								exeption: 'ProPaint guarantees affordable prices on our services.'
+							})
+				.col-lg-4
+					.row.no-gutters
+						.col-sm-6.col-lg-12
+							+team-box({
+								imgName: 'about-1-390x332',
+								name: 'Peter Wilson',
+								position: 'Senior Painter'
+							})
+						.col-sm-6.col-lg-12
+							+team-box({
+								imgName: 'about-2-390x332',
+								name: 'John Smith',
+								position: 'Senior Estimator'
+							})
+						.col-sm-6.col-lg-12
+							+team-box({
+								imgName: 'about-3-390x332',
+								name: 'Sam Robinson',
+								position: 'Office Manager'
+							})
+						.col-sm-6.col-lg-12
+							+team-box({
+								imgName: 'about-4-390x332',
+								name: 'Jane Smith',
+								position: 'Estimator'
+
+							})
+
+	// Page Footer
+	include ../sections/_footer-dark

@@ -1,0 +1,123 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'services'
+	- var pageName = 'Single Service'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: 'Deck Staining',
+		subtitle: 'A few words about one of our services',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Web design
+	section.section.section-lg.section-lg-2.bg-default
+		.container
+			.row.row-40.justify-content-between
+				.col-lg-11
+					h4.custom-title Deck Staining
+					p.big Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis
+
+	// Web design
+	section.section.section-lg.bg-gray-light
+		.container
+			.row.row-40.justify-content-between
+				.col-lg-3
+					h5.font-weight-normal Scraping
+					p Id volutpat lacus laoreet non curabitur gravida. Ultrices dui sapien eget mi proin.
+
+				.col-lg-3
+					h5.font-weight-normal Power Wash
+					p Ultricies mi quis hendrerit dolor magna. Arcu dui vivamus arcu felis adipiscing dolor.
+
+				.col-lg-3
+					h5.font-weight-normal Sanding
+					p Arcu dui vivamus arcu felis. Eget sit amet tellus cras adipiscing enim facilisi morbi.
+
+				.col-lg-3
+					h5.font-weight-normal Paint or Stain
+					p Elementum integer enim neque volutpat ac tincidunt vitae. Enim sit amet venenatis urna.
+
+	// Prices
+	section.section.section-lg.bg-default
+		.container
+			h4.custom-title.font-weight-sbold Pricing
+			table.table-custom.table-custom-responsive
+				tr
+					td
+						.icon.icon-md.icon-gray-300.linearicons-pencil-ruler
+					td
+						.heading-5.font-weight-normal Deck & Patio Repair
+					td
+						.big.exeption Imperdiet nulla malesuada pellentesque elit natoque.
+					td
+						+price-box-minimal({
+							price: '$125'
+						})
+
+				tr
+					td
+						.icon.icon-md.icon-gray-300.linearicons-color-sampler
+					td
+						.heading-5.font-weight-normal Power Washing
+					td
+						.big.exeption Morbi tincidunt ornare volutpat  massa eget egestas purus.
+					td
+						+price-box-minimal({
+							price: '$150'
+						})
+
+				tr
+					td
+						.icon.icon-md.icon-gray-300.linearicons-paint-roller
+					td
+						.heading-5.font-weight-normal Patio Construction
+					td
+						.big.exeption Felis donec et odio pellentesque diam volutpat commodo.
+					td
+						+price-box-minimal({
+							price: '$155'
+						})
+
+	// Latest project
+	section.section.section-sm.bg-default
+		.container
+			h4.custom-title Featured project
+
+	// Featured project
+	section.section.bg-gray-light.context-light.section-relative.bordered-bottom
+		.container
+			.row
+				.col-md-5.text-block-1.wow.fadeInLeft
+					.section-sm.section-sm-3
+						h5 Inter Restaurant
+						p We created unique color scheme for this restaurant located in Los Angeles, CA by marking out its various zones and using different shades & color accents.
+						.button-wrap
+							a.button.button-primary.button-lg.button(href="single-project.html") view All projects
+						ul.list-inline.list-inline-sm-1
+							li: p Share
+							li: a.icon.icon-sm.link-default.mdi.mdi-facebook(href="#")
+							li: a.icon.icon-sm.link-default.mdi.mdi-instagram(href="#")
+							li: a.icon.icon-sm.link-default.mdi.mdi-twitter(href="#")
+							li: a.icon.icon-sm.link-default.mdi.mdi-youtube-play(href="#")
+		// Swiper
+		.swiper-section
+			.swiper-container.swiper-slider.swiper-slider-1( data-next='.custom-swiper-button-next', data-prev='.custom-swiper-button-prev', data-loop="true" )
+				.swiper-wrapper
+					.swiper-slide( data-slide-bg='images/home-1-585x541.jpg' )
+					.swiper-slide( data-slide-bg='images/home-2-585x541.jpg' )
+
+				.swiper-pagination
+
+				// Swiper Navigation
+			.custom-swiper-button-wrap
+				.custom-swiper-button-next.mdi.mdi-arrow-right
+				.custom-swiper-button-prev.mdi.mdi-arrow-left
+
+
+	// Page Footer
+	include ../sections/_footer-dark

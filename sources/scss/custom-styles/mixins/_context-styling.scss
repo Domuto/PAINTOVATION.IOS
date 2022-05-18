@@ -1,0 +1,25 @@
+/*
+* Contexts
+*/
+
+%context-dark {
+	&,
+	#{headings()} {
+		color: $white;
+	}
+
+	p {
+		color: rgba($white, .4);
+	}
+	.box-counter .box-counter-main .counter , .box-counter .box-counter-title{
+		color: $white;
+	}
+}
+
+%context-light {
+	color: $body-color;
+
+	#{headings()} {
+		color: $headings-color;
+	}
+}

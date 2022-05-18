@@ -1,0 +1,254 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-card
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'home'
+	- var pageName = 'Home'
+
+block page
+	// Page Header
+	include ../sections/_header-wide
+
+	// Preview section
+	section.section.context-dark.bg-image.bg-mask.bg-mask-2.section-fullheight.section-90vh.bg-sm-position(style="background-image: url(images/jumbotron-1-1920x947.jpg)")
+		.section-fullheight-inner.section-md
+			.container
+				.row.justify-xl-content-end.justify-content-center
+					.col-md-8.col-xl-6.text-center.text-md-left
+						.jumbotron-custom.wow.fadeInRight
+							.title Welcome
+								br.d-none.d-lg-block
+								|to propaint
+							p.heading-subtitle With over 17 years of experience in painting residential homes and commercial projects, we strive to exceed customers’ expectations.
+							a(href="#").button-primary.button-m.button Get in touch
+
+	// EVERY PROJECT
+	section.section.section-xl-custom.image-section.section-lined
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			.row
+				.col-md-7.col-lg-6
+					h3 a Few words
+					.content-subtitle.font-weight-medium about our painting company
+					p.offset-xl-top-60.text-black ProPaint is one of the largest painting companies in the US. We have been serving clients since 1999 with a full range of high-quality exterior and interior painting services. Our highly trained and dedicated house painters know how to tackle any job, big or small!
+					.button-wrap-2
+						a(href="about-us.html").button-primary.button-md.button Read more about us
+		.image-container
+			.mock-up-1
+				.object.object-1
+					+jpg('image-custom-1-395x243').wow.fadeInRight
+				.object.object-2
+					+jpg('image-custom-2-384x189').wow.fadeInRight(data-wow-delay="0.2s")
+				.object.object-3
+					+jpg('image-custom-3-395x243').wow.fadeInRight(data-wow-delay="0.4s")
+				.object.object-4
+					+jpg('image-custom-4-209x184').wow.fadeInRight(data-wow-delay="0.6s")
+				.object.object-5
+					+jpg('image-custom-5-395x243').wow.fadeInRight(data-wow-delay="0.2s")
+				.object.object-6
+					+jpg('image-custom-6-275x184').wow.fadeInRight(data-wow-delay="0.4s")
+
+	// Services
+	section.section.section-lg.section-lg-1.bg-gray-light.context-light
+		.container
+			.row.row-50.justify-content-between
+				.col-lg-7.col-xl-6
+					.row.row-40.row-lg-0.row-flex.number-counter
+						.col-sm-6.col-lg-6.wow.fadeInLeft(data-wow-delay="0.2s")
+							+blurb-hover({
+								icon: 'linearicons-pencil-ruler',
+								title: 'Qualified Team',
+								exeption: 'Our company is comprised of the best painting experts.'
+							})
+
+						.col-sm-6.col-lg-6.wow.fadeInLeft
+							+blurb-hover({
+
+								icon: 'linearicons-color-sampler',
+								title: 'Years of Experience',
+								exeption: 'With 17+ years of experience, we provide the best services.'
+							})
+
+						.col-sm-6.col-lg-6.wow.fadeInLeft(data-wow-delay="0.4s")
+							+blurb-hover({
+								icon: 'linearicons-cube',
+								title: 'Color Consulting',
+								exeption: 'Get a free color consultation at any time from our team.'
+							})
+
+						.col-sm-6.col-lg-6.wow.fadeInLeft(data-wow-delay="0.2s")
+							+blurb-hover({
+								icon: 'linearicons-broom',
+								title: 'Price Guarantee',
+								exeption: 'ProPaint guarantees affordable prices on our services.'
+							})
+
+				.col-lg-5.col-xl-5
+					h3 Services
+					p.big.big-custom.text-primary.font-weight-normal THAT WE PROVIDE
+					#accordion1.card-group-custom.number-counter-1( role='tablist' aria-multiselectable='false' )
+						+card({
+							show: true,
+							parentId: 'accordion1',
+							title: 'Exterior painting'
+						})
+							p One of the most notable ways to update your home is to invest in a fresh coat of paint for the exterior; you'll gain curb appeal, extend the life of your siding, and decrease the risk from weather damage.
+
+						+card({
+							parentId: 'accordion1',
+							title: 'Interior painting'
+						}).card-secondary-2
+							p Do you want to give your home an updated look that sets the perfect atmosphere? New Interior paint is one of the best ways to make your home your favorite place to dwell; it adds beauty, value, and character.
+
+						+card({
+							parentId: 'accordion1',
+							title: 'Commercial painting'
+						}).card-secondary-3
+							p Do you want to give your home an updated look that sets the perfect atmosphere? New Interior paint is one of the best ways to make your home your favorite place to dwell; it adds beauty, value, and character.
+
+	// Our awards
+	section.section.section-lg.bg-default.section-lined
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container.position-relative
+			.row.row-30.align-items-center
+				.col-sm-12.col-lg-4
+					h3 What we offer
+				.col-sm-6.col-lg-4
+					.big.block-1-custom As a leading painting company, we offer the best solutions based on creativity and experience.
+				.col-sm-6.col-lg-4
+					.block-2-custom
+						+counter-minimal({
+							value: '17',
+							postfix: '+',
+							title: 'International awards'
+						})
+			.box-border-wrap-1.wow.fadeInUp(data-wow-delay="0.2s")
+				.row
+					a.col-6.col-md-4.box-border(href="#")
+						.title.text-right
+							span.d-block fresh &
+							span.d-block creative ideas
+						.service-icon.icon-xxl.construction-icon-13
+					a.col-6.col-md-4.box-border(href="#")
+						.title.text-right
+							span.d-block Professional
+							span.d-block equipment
+						.service-icon.icon-xxl.construction-icon-11
+					a.col-6.col-md-4.box-border(href="#")
+						.title.text-right
+							span.d-block 1000 color
+							span.d-block shades
+						.service-icon.icon-xxl.construction-icon-07
+					a.col-6.col-md-4.box-border(href="#")
+						.title.text-right
+							span.d-block Quality
+							span.d-block materials
+						.service-icon.icon-xxl.construction-icon-05
+					a.col-6.col-md-4.box-border(href="#")
+						.title.text-right
+							span.d-block Flexible
+							span.d-block scheduling
+						.service-icon.icon-xxl.construction-icon-18
+					a.col-6.col-md-4.box-border(href="#")
+						.icon.icon-sm.linearicons-arrow-right
+
+	// Latest Works
+	section.section.section-xs.section-xs-3.bg-default.section-lined
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			.row.row-30
+				.col-sm-6
+					h3 Latest project
+				.col-sm-6.text-sm-right
+					a(href="projects.html").button.button-gray View all
+
+	// Latest Works
+	section.section.bg-gray-light.context-light.section-relative
+		.container
+			.row
+				.col-md-5.text-block-1.wow.fadeInLeft
+					.section-sm.section-sm-3
+						h5.font-weight-normal Inter Restaurant
+						p We created unique color scheme for this restaurant located in Los Angeles, CA by marking out its various zones and using different shades & color accents.
+						.button-wrap
+							a.button.button-primary.button-lg.button(href="single-project.html") view All projects
+						ul.list-inline.list-inline-sm-1
+							li: p Share
+							li: a.icon.icon-sm.link-default.mdi.mdi-facebook(href="#")
+							li: a.icon.icon-sm.link-default.mdi.mdi-instagram(href="#")
+							li: a.icon.icon-sm.link-default.mdi.mdi-twitter(href="#")
+							li: a.icon.icon-sm.link-default.mdi.mdi-youtube-play(href="#")
+		// Swiper
+		.swiper-section
+			.swiper-container.swiper-slider.swiper-slider-1( data-next='.custom-swiper-button-next', data-prev='.custom-swiper-button-prev', data-loop="true" )
+				.swiper-wrapper
+					.swiper-slide( data-slide-bg='images/home-1-585x541.jpg' )
+					.swiper-slide( data-slide-bg='images/home-2-585x541.jpg' )
+
+				.swiper-pagination
+
+				// Swiper Navigation
+			.custom-swiper-button-wrap
+				.custom-swiper-button-next.mdi.mdi-arrow-right
+				.custom-swiper-button-prev.mdi.mdi-arrow-left
+
+	// Our clients
+	section.section.section-lg.section-bottom-0.bg-default.section-lined
+		.container.container-lined
+			.row
+				.col-md-4
+				.col-md-4
+				.col-md-4
+		.container
+			.box-grid-wrap.border-b-0
+				.row.no-gutters
+					.col-md-6.col-lg-4
+						.row.no-gutters.flex-md-column-reverse
+							.col-md-12
+								.box-counter-custom
+									.counter(style="background-image: url(images/bg-image-4.jpg)") 19
+									.title years of experience
+							.col-12
+								.row.no-gutters
+									a.col-6.col-md-6.box-border(href="#")
+										+png("brand-1-78x28")
+									a.col-6.col-md-6.box-border(href="#")
+										+png("brand-2-69x40")
+
+					.col-md-6.col-lg-4.align-items-start
+						.row.no-gutters
+							a.col-6.col-md-6.box-border(href="#")
+								+png("brand-3-93x58")
+							a.col-6.col-md-6.box-border(href="#")
+								+png("brand-4-101x23")
+							a.col-6.col-md-6.box-border(href="#")
+								+png("brand-5-74x32")
+							a.col-6.col-md-6.box-border(href="#")
+								+png("brand-6-72x38")
+							a.col-12.box-border.box-border-1(href="#")
+								.icon.icon-sm.mdi.mdi-arrow-right
+
+					.col-lg-4.box-wrapper-1
+						.heading-3.title Our clients
+						p We work with lots of corporate customers located worldwide.
+						p Some of our clients became our partners and joined our business loyalty program that allows getting more from our solutions.
+						.img-wrap-1
+							+png("speaker-2-180x70")
+
+	// Page Footer
+	include ../sections/_footer-dark

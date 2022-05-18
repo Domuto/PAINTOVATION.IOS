@@ -1,0 +1,31 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = '404'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: 'Page not found!',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Blurb minimal
+	section.section.section-md.bg-default
+		.container
+			.row.justify-content-center
+				.col-md-8.col-xl-6
+					.big-title-wrap
+						.big-title 404
+						h5.big-title-text Oops! This page can't be found
+					form.rd-search.rd-search-form(action='search-results.html' method='GET')
+						.form-wrap
+							label.form-label(for='search-form-input') Search
+							input(class='form-input' id='search-form-input' type='text' name='s' autocomplete="off")
+						button.rd-search-form-submit.linearicons-magnifier(type='submit')
+
+	// Page Footer
+	include ../sections/_footer-dark

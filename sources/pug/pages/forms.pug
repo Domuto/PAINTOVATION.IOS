@@ -1,0 +1,198 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Forms'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Perfect for gathering user data',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Forms
+	section.section.section-md.bg-default
+		.container
+			.row.row-50.justify-content-md-between
+				.col-md-9.col-lg-6.col-xl-5
+					h4 Login form
+					// RD Mailform
+					form.rd-form.rd-mailform
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-account-outline
+							input#login-name.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='login-name') Name
+
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-key
+							input#login-password.form-input(type='password' name='password' data-constraints='@Required')
+							label.form-label(for='login-password') Password
+
+						.form-wrap.form-wrap-checkbox
+							label.checkbox
+								input.checkbox-custom(type='checkbox' name='check')
+								span.label Remember me
+
+						.button-wrap.group-md
+							button.button.button-primary(type='submit') Login
+							button.button.button-primary(type='submit') Create an account
+
+				.col-md-9.col-lg-6.col-xl-5
+					h4 Registration form
+					// RD Mailform
+					form.rd-form.rd-mailform
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-account-outline
+							input#register-name.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='register-name') Name
+
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-email-outline
+							input#register-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='register-email') E-mail
+
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-key
+							input#register-password.form-input(type='password' name='password' data-constraints='@Required')
+							label.form-label(for='register-password') Password
+
+						.button-wrap
+							button.button.button-primary(type='submit') Sign up
+
+
+	// Subscribe to Our Newsletter
+	+parallax({
+		img: 'bg-image-5.jpg',
+		innerClass: 'section-lg context-dark text-center'
+	}).section
+		.container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+			h4.text-capitalize Subscribe Today
+			p.big.text-transparent Subscribe to our newsletter to receive the latest news and updates.
+
+			form.rd-form.rd-mailform.rd-form-inline.rd-form-validation-white(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+				.form-wrap.form-wrap-icon
+					.form-icon.mdi.mdi-email-outline
+					input.form-input(id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required")
+					label.form-label(for="subscribe-form-email") E-mail
+				.form-button
+					button.button.button-primary.button-right(type="submit") Send
+
+	// Contact us
+	section.section.section-md.bg-default
+		.container
+			h4 Get in touch with us
+			p.big
+				| Feel free to contact our specialists to find out more about our prices and services.
+				br
+				| We are always ready to answer your questions.
+			// RD Mailform
+			form.rd-form.rd-mailform.form-boxed(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+				.row.row-50
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-account-outline
+							input#contact-name-3.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-name-3') Name
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-email-outline
+							input#contact-email-3.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='contact-email-3') E-mail
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-phone
+							input#contact-phone-3.form-input(type='text' name='phone' data-constraints='@Numeric')
+							label.form-label(for='contact-phone-3') Phone
+
+					.col-12
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-message-outline
+							label.form-label(for='contact-message-3') Message
+							textarea#contact-message-3.form-input(name='message' data-constraints='@Required')
+
+					.col-md-12
+						button.button.button-primary(type='submit') Send
+
+
+	// Contact us
+	section.section.section-md.bg-default
+		.container
+			h4 Contact us with reCaptcha
+			p.big
+				| Feel free to contact our specialists to find out more about our prices and services.
+				br
+				| We are always ready to answer your questions.
+			// RD Mailform
+			form.rd-form.rd-mailform.form-boxed(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+				.row.row-50
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-account-outline
+							input#contact-name-2.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-name-2') Name
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-email-outline
+							input#contact-email-2.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='contact-email-2') E-mail
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-phone
+							input#contact-phone-2.form-input(type='text' name='phone' data-constraints='@Numeric')
+							label.form-label(for='contact-phone-2') Phone
+
+					.col-12
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-message-outline
+							label.form-label(for='contact-message-2') Message
+							textarea#contact-message-2.form-input(name='message' data-constraints='@Required')
+
+					.col-md-7
+						.form-wrap.form-wrap-recaptcha.form-validation-left
+							// Google captcha
+							.recaptcha#captcha1(data-sitekey='6LfZlSETAAAAAC5VW4R4tQP8Am_to4bM3dddxkEt', data-size="200")
+
+					.col-md-12
+						button.button.button-primary(type='submit') Send
+
+	// MailChimp
+	+parallax({
+		img: 'bg-image-5.jpg',
+		innerClass: 'section-lg context-dark text-center'
+	}).section
+		.container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+			h4.text-capitalize MailChimp
+			p.big.text-transparent Sign up to our newsletter and be the first to know about the latest news, special offers, events, and discounts.
+
+			form.rd-form.mailchimp-mailform.rd-form-inline.rd-form-validation-white(data-form-output="form-output-global", action="https://templatemonster.us15.list-manage.com/subscribe/post?u=ba5bb362073a413f48e4a7b90&amp;id=8dc95d9dec", method="post")
+				.form-wrap.form-wrap-icon
+					.form-icon.mdi.mdi-email-outline
+					input.form-input(id="mailchimp-email" type="email" name="email" data-constraints="@Email @Required")
+					label.form-label(for="mailchimp-email") E-mail
+				.form-button
+					button.button.button-primary.button-right(type="submit") Send
+
+	// Campaign Monitorlist-marked
+	section.section.section-lg.text-center
+		.container: .row.justify-content-md-center: .col-md-9.col-lg-8.col-xl-7
+			h4.text-capitalize Campaign Monitor
+			p.big.text-transparent Sign up to our newsletter and be the first to know about the latest news, special offers, events, and discounts.
+
+			form.rd-form.campaign-mailform.rd-form-inline.rd-form-validation-white(data-form-output="form-output-global", action="https://templatermonster.createsend.com/t/j/s/zjjikd/", method="post")
+				.form-wrap.form-wrap-icon
+					.form-icon.mdi.mdi-email-outline
+					input.form-input(id="campaign-email" type="email" name="email" data-constraints="@Email @Required")
+					label.form-label(for="campaign-email") E-mail
+				.form-button
+					button.button.button-primary.button-right(type="submit") Send
+
+	// Page Footer
+	include ../sections/_footer-dark

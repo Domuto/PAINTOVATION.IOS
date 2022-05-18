@@ -1,0 +1,175 @@
+/*
+* Buttons
+*/
+
+// Button General Styles
+
+.button {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	@include btn-size($input-btn-padding-y, $input-btn-padding-x, $input-btn-font-size, $input-btn-line-height);
+	font-family: $btn-font-family;
+	font-weight: $btn-font-weight;
+	letter-spacing: .03em;
+	text-transform: $btn-text-transform;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
+	cursor: pointer;
+	vertical-align: middle;
+	user-select: none;
+	transition: 250ms all ease-in-out;
+	border: none;
+	border-radius: 4px;
+}
+
+.button-block {
+	display: block;
+	width: 100%;
+}
+
+.button-right {
+	border-left: 0;
+	border-right-width: 5px;
+	border-right-style: solid;
+}
+
+//
+// Appearance style
+//
+.button-primary{
+	@include btn-variant($white, $black, $black, $white, $primary, $primary);
+}
+
+.button-gray{
+	@include btn-variant($black, $gray-light, $gray-light, $white, $primary, $primary);
+}
+
+.button-default {
+	@include btn-variant($white, $gray-900, $primary, $black, $secondary, $gray-900);
+}
+
+.context-dark {
+	.button-default:not(.button-invariable) {
+		@include btn-variant($black, $white, $primary, $black, $secondary, $gray-900);
+	}
+}
+
+.button-light {
+	@include btn-variant($black, $gray-100, $primary, $white, $primary, $gray-900);
+	box-shadow: 0 4px 4px 0 rgba($black, .1);
+}
+
+.button-secontary {
+	@include btn-variant($black, $secondary, $primary, $black, $secondary, $gray-900);
+}
+
+//
+// Button Sizes
+//
+
+.button-sm {
+	@include btn-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, 13px, $input-btn-line-height-sm);
+}
+
+.button-lg {
+	@include btn-size($input-btn-padding-y-lg, $input-btn-padding-x-lg, 15px, $input-btn-line-height-lg);
+}
+
+//
+// Button Icon styles
+//
+.button {
+	&.button-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		vertical-align: middle;
+		padding-left: 30px;
+		padding-right: 30px;
+
+		.icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			color: inherit;
+			font-size: 1.3em;
+			line-height: 1em;
+		}
+
+		&-left {
+			.icon {
+				padding-right: 11px;
+			}
+		}
+
+		&-right {
+			flex-direction: row-reverse;
+			.icon {
+				padding-left: 11px;
+			}
+		}
+
+		&.button-link {
+			.icon {
+				top: 5px;
+				font-size: 1em;
+			}
+		}
+
+		&.button-xs {
+			.icon {
+				top: .05em;
+				font-size: 1.2em;
+				padding-right: 8px;
+			}
+
+			.button-icon-right {
+				padding-left: 8px;
+			}
+		}
+	}
+}
+
+.button-wrap-2 {
+	// Medium ≥768px
+	@include media-breakpoint-up(md) {
+		//margin-left: 50px;
+	}
+}
+
+// Button offsets
+* + .button-wrap-1 { margin-top: 60px; }
+* + .button-wrap-2 { margin-top: 30px; }
+
+@include media-breakpoint-up(xl) {
+	* + .button-wrap-1 { margin-top: 80px; }
+	* + .button-wrap-2 { margin-top: 40px; }
+}
+
+@include media-breakpoint-up(xxl) {
+	* + .button-wrap-1 { margin-top: 110px; }
+	* + .button-wrap-2 { margin-top: 60px; }
+}
+
+
+
+.button-s{
+	height: 50px;
+}
+.button-m{
+	height: 50px;
+	min-width: 178px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+.button-md{
+	padding: 16px 29px;
+}
+
+.button-l{
+	height: 50px;
+}

@@ -1,0 +1,115 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'portfolio'
+	- var pageName = 'Single Project'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Learn more about one of our projects',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Website Development
+	section.section.section-sm.bg-default
+		.container
+			.row.row-50.justify-content-between
+				.col-md-6
+					h4.custom-title 8 North Brewery Rd.
+					p.big Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					p.big Tempus quam pellentesque nec nam aliquam sem et tortor consequat. Id nibh tortor id aliquet lectus proin nibh nisl condimentum.
+					a.button.button-default(href="#") View site
+				.col-md-5
+					ul.box-list
+						li
+							.heading-6.title Client
+							p Peter McMillan
+						li
+							.heading-6.title Date
+							p March 26, 2019
+						li
+							.heading-6.title Service
+							p Deck Staining
+
+	// Video section
+	section.section.bg-default
+		.container
+			+video-box({
+				"background": "video-bg-1170x538.jpg",
+				"link": "https://www.youtube.com/watch?v=LUe-ZYozelM"
+			})
+
+	// Text section
+	section.section.section-sm.bg-default
+		.container
+			.row.row-50.justify-content-between
+				.col-md-6
+					h4.custom-title In this project, we focused on proper Deck restoration and complete deck cleaning
+				.col-md-6.col-lg-5
+					p.big Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Pharetra et ultrices neque ornare.
+					p.big Dictum sit amet justo donec. Consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit.
+
+	// Projects
+	section.section.section-sm.bg-default
+		// Owl Carousel
+		.owl-carousel.owl-carousel-1(data-items='1', data-sm-items='2', data-md-items='3', data-dots='true' data-nav='true' data-stage-padding='0', data-loop='false', data-margin='18', data-mouse-drag="false")
+			.box-image
+				+jpg('single-project-1-629x637')
+			.box-image
+				+jpg('single-project-2-629x637')
+			.box-image
+				+jpg('single-project-3-629x637')
+			.box-image
+				+jpg('single-project-1-629x637')
+			.box-image
+				+jpg('single-project-2-629x637')
+
+	// Project Details
+	section.section.section-md.bg-default.pt-0
+		.container
+			.row.row-30
+				.col-lg-6
+					+jpg('single-project-6-526x652')
+				.col-lg-6
+					h4.custom-title Results of our work
+					p.big Massa placerat duis ultricies lacus sed turpis tincidunt id. Accumsan tortor posuere ac ut consequat semper viverra nam libero.
+					p.big latea dictumst quisque sagittis purus sit amet. Neque laoreet suspendisse interdum consectetur libero id. Pulvinar sapien et ligula ullamcorper malesuada proin libero.
+					article.quote-simple
+						.quote-simple-body
+							q Morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor.
+						.quote-simple-footer
+							cite.heading-5.quote-simple-cite Peter McMillan
+							span.quote-simple-description Client
+					.row.row-3
+						.col-md-6
+							ul.list-marked
+								li: span.big Consectetur adipiscing elit
+								li: span.big Quis nostrud exercitation
+								li: span.big Exercitation ullamco laboris
+						.col-md-6
+							ul.list-marked
+								li: span.big Quis ipsum suspendisse
+								li: span.big Faucibus suspendisse
+								li: span.big Magna etiam tempor orci
+
+	// Share projects
+	section.section.section-lg.bg-default.pt-0
+		.container
+			.box-custom
+				.inner-left
+					p.title Share this project
+					ul.list-inline.list-inline-sm
+						li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-facebook(href="#")
+						li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-instagram(href="#")
+						li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-behance(href="#")
+						li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-twitter(href="#")
+				a(href="#").inner-right
+					span.big Next Project
+
+
+	// Page Footer
+	include ../sections/_footer-dark

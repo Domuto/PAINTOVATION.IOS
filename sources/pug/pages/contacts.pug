@@ -1,0 +1,82 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'contacts'
+	- var pageName = 'Contacts'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'View our contacts or write us a message',
+		bgImage: 'breadcrumbs-bg-7.jpg'
+	})
+
+	// Blurb minimal
+	section.section.section-md.bg-default
+		.container
+			.row.row-40
+				.col-sm-6.col-md-4
+					.box-lined
+						.box-lined-body
+							h6.box-lined-title Email & telephone
+							ul.box-lined-list
+								li: a.big.contact-link(href="mailto:#") info@demolionk.org
+								li: a.big.contact-link(href="tel:#") 1-300-123-1234
+
+				.col-sm-6.col-md-4
+					.box-lined
+						.box-lined-body
+							h6.box-lined-title Address
+							ul.box-lined-list
+								li.big.text-black 1418 Riverwood Drive, Suite 3845 Cottonwood, CA 96022 United States
+
+				.col-sm-12.col-md-4
+					.box-lined
+						.box-lined-body
+							h6.box-lined-title Socials
+							ul.list-inline.list-inline-sm
+								li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-facebook(href="#")
+								li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-instagram(href="#")
+								li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-behance(href="#")
+								li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-twitter(href="#")
+
+	// Get in touch with us
+	section.section.section-md.bg-default
+		.container
+			h4 Get in touch with us
+			p.big Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+			// RD Mailform
+			form.rd-form.rd-mailform.form-boxed(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+				.row.row-50
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-account-outline
+							input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-name') Name
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-email-outline
+							input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='contact-email') E-mail
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-phone
+							input#contact-phone.form-input(type='text' name='phone' data-constraints='@Numeric')
+							label.form-label(for='contact-phone') Phone
+
+					.col-12
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-message-outline
+							label.form-label(for='contact-message') Message
+							textarea#contact-message.form-input(name='message' data-constraints='@Required')
+
+					.col-md-12
+						button.button.button-default(type='submit') Send
+
+	// Page Footer
+	include ../sections/_footer-dark

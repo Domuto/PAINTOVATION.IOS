@@ -1,0 +1,41 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Coming soon'
+
+block page
+
+	// Coming soon
+	section.section.one-page-section
+		.row.no-gutters.row-flex
+			.col-lg-6
+				.one-page-wrap
+					.one-page-header
+						+logo
+
+					.one-page-content
+						.big OUR WEBSITE IS COMING SOON
+						h4.custom-title.custom-title-small The website Will be <br>Available in:
+						.countdown-wrap
+							.DateCountdown(data-type='until' data-date='2019-12-31 00:00:00' data-format='wdhms' data-color='transparent' data-bg='transparent' data-width='0')
+						.heading-6 Subscribe to be notified:
+						form.rd-form.rd-mailform.rd-form-inline(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+							.form-wrap.form-wrap-icon
+								.form-icon.mdi.mdi-email-outline
+								input.form-input(id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required")
+								label.form-label(for="subscribe-form-email") E-mail
+							.form-button
+								button.button.button-default(type="submit") Send
+						p.paragraph-custom We respect your privacy and never share your info
+
+					.one-page-footer
+						.heading-6 Stay in touch
+						ul.list-inline.list-inline-sm
+							li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-facebook(href="#")
+							li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-instagram(href="#")
+							li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-behance(href="#")
+							li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-twitter(href="#")
+
+			.col-lg-6.one-page-image(style="background: url(images/bg-6-960x1080.jpg) no-repeat; background-size:cover;")
+

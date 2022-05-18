@@ -1,0 +1,95 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'portfolio'
+	- var pageName = 'Projects'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Take a look at our latest projects',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Projects grid
+	section.section.section-lg.bg-default
+		.container.container-custom-width
+			.row.row-custom-width.row-40.row-xxl-110.row-flex
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-1-518x373',
+						title: '278 Cobblestone Rd.',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-2-518x373',
+						title: '371 Griffin Street',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-3-518x373',
+						title: '8362 Pearl Street',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-4-518x373',
+						title: '8 North Brewery Rd.',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-5-518x373',
+						title: '730 W. Cardinal St.',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-6-518x373',
+						title: '509 Dogwood Street',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-7-518x373',
+						title: '214 Myers Dr.',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-8-518x373',
+						title: '455 High Point Rd.',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+				.col-sm-6.col-lg-4
+					+project-grid({
+						imgBackground: 'projects-9-518x373',
+						title: '86 Tarkiln Hill Ave ',
+						exeption: 'Praesent semper feugiat nibh sed pulvinar proin gravida malesuada.',
+						link: 'single-project.html'
+					})
+
+
+	// Page Footer
+	include ../sections/_footer-dark

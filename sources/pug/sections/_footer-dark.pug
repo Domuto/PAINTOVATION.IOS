@@ -1,0 +1,45 @@
+footer.section.section-lg.footer-dark.context-ligh.bg-gray-light
+	.container
+		.row.row-40.justify-content-between
+			.col-md-6.col-lg-5.col-xl-4
+				h3 Get in touch
+				p Feel free to contact our specialists to find out more about our prices and services. We are always ready to answer your questions.
+				.custom-wrap-line
+					.custom-wrap-inner
+						dl.list-terms-custom.list-terms-custom-1
+							dt.text-primary Ph.
+							dd: a.contact-link(href="tel:#") 1-300-123-1234
+						dl.list-terms-custom.list-terms-custom-1
+							dt.text-primary Mail.
+							dd: a.contact-link.font-weight-normal(href="mailto:#") Info@demolionk.org
+						ul.list-inline.list-inline-sm
+							li: a.icon.icon-sm.icon-gray-filled.icon-circle.mdi.mdi-facebook(href="#")
+							li: a.icon.icon-sm.icon-gray-filled.icon-circle.mdi.mdi-instagram(href="#")
+							li: a.icon.icon-sm.icon-gray-filled.icon-circle.mdi.mdi-twitter(href="#")
+							li: a.icon.icon-sm.icon-gray-filled.icon-circle.mdi.mdi-behance(href="#")
+						+rights
+
+			.col-md-6
+				form.rd-form.rd-mailform(data-form-output='form-output-global', data-form-type='contact', method='post', action='bat/rd-mailform.php')
+					.form-wrap.form-wrap-icon
+						.form-icon.mdi.mdi-account-outline
+						input#contact-name2.form-input(type='text' name='name' data-constraints='@Required')
+						label.form-label(for='contact-name2') Name
+
+					.form-wrap.form-wrap-icon
+						.form-icon.mdi.mdi-phone
+						input#contact-phone2.form-input(type='text' name='phone' data-constraints='@Numeric')
+						label.form-label(for='contact-phone2') Phone
+
+					.form-wrap.form-wrap-icon
+						.form-icon.mdi.mdi-email-outline
+						input#contact-email2.form-input(type='email' name='email' data-constraints='@Email @Required')
+						label.form-label(for='contact-email2') E-mail
+
+					.form-wrap.form-wrap-icon
+						.form-icon.mdi.mdi-message-outline
+						label.form-label(for='contact-message2') Message
+						textarea#contact-message2.form-input(name='message' data-constraints='@Required')
+
+					.button-wrap
+						button.button.button-primary.button-md(type='submit') send message

@@ -1,0 +1,150 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-pagination
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Blog post'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide 
+
+	+breadcrumbs({
+		tag: 'News',
+		titleSmall: 'Protect Your Home’s Exterior Paint',
+		subtitle: 'May 10, 2019',
+		bgImage: 'breadcrumbs-bg-3.jpg'
+	})
+
+	// Post single
+	section.section.section-md.bg-default
+		.container
+			.row.row-50.justify-content-center
+				.col-md-7.col-lg-8
+					.post-single-wrap
+						.post-single-item.post-single-content
+							h5.title Why You Should Protect Your Home’s Paint
+							p Ut morbi tincidunt augue interdum velit euismod. Posuere lorem ipsum dolor sit amet consectetur. Ut placerat orci nulla pellentesque. Integer quis auctor elit sed vulputate mi sit amet. Sit amet tellus cras adipiscing. Elementum nisi quis eleifend quam. Faucibus ornare suspendisse sed nisi. Facilisis mauris sit amet massa vitae tortor. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt.
+							+jpg('blog-post-1-702x397')
+							h5.title Secrets of Paint Protection
+							p Condimentum mattis pellentesque id nibh. Commodo odio aenean sed adipiscing diam. Quam lacus suspendisse faucibus interdum posuere lorem ipsum. Dolor sit amet consectetur adipiscing elit. Condimentum id venenatis a condimentum vitae sapien pellentesque. At lectus urna duis convallis convallis.
+							article.quote-simple
+								.quote-simple-body
+									q Morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor.
+								.quote-simple-footer
+									cite.heading-5.quote-simple-cite Jane Smith
+									span.quote-simple-description Estimator
+							p Luctus accumsan tortor posuere ac ut consequat semper viverra nam. Lacus luctus accumsan tortor posuere ac ut. Sodales ut etiam sit amet nisl purus in. Tincidunt vitae semper quis lectus. Commodo nulla facilisi nullam vehicula ipsum a arcu cursus vitae.
+							ul.list-tags
+								li: a.tag(href="#") Exterior
+								li: a.tag(href="#") Blog
+								li: a.tag(href="#") News
+							.divider.divider-1
+							.box-inline
+								.box-item
+									p.small-text Share this project
+								.box-item
+									ul.list-inline.list-inline-sm
+										li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-facebook(href="#")
+										li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-instagram(href="#")
+										li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-behance(href="#")
+										li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-twitter(href="#")
+						.post-single-item
+							h6 Related posts
+							.row.row-40.offset-custom-1
+								.col-md-6
+									+post-classic-small({
+										tag: 'News',
+										image: 'post-small-1-325x220',
+										title: 'Painting Your Workspace: Top 5 Essential Tips',
+										link: 'blog-post.html',
+										time: 'May 10, 2019'
+									})
+								.col-md-6
+									+post-classic-small({
+										tag: 'News',
+										image: 'post-small-2-325x220',
+										title: 'Reasons Why You Should Paint Your Ceilings',
+										link: 'blog-post.html',
+										time: 'May 10, 2019'
+									})
+
+				.col-md-5.col-lg-4
+					.aside-wrap
+						.aside-item
+							include ../sections/widgets/_search-form
+						.aside-item
+							include ../sections/widgets/_tags
+						.aside-item
+							include ../sections/widgets/_categories
+						.aside-item
+							include ../sections/widgets/_recent-posts
+						.aside-item
+							include ../sections/widgets/_newsletter
+
+	section.section.section-sm.bg-gray-100
+		.container
+			h6 3 comments
+			.divider.divider-1.comment-divider
+			ul.comment-list
+				li
+					+box-comment({
+						imgName: 'user-1-86x86',
+						name: 'Kate Wilson',
+						time: 'October 5, 2019 at 1:44 pm',
+						exeption: 'Mauris augue neque gravida in fermentum et sollicitudin. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Cras sed felis eget velit aliquet. Augue eget arcu dictum varius duis at consectetur lorem. Tristique et egestas quis ipsum suspendisse ultrices. Fermentum et sollicitudin ac orci.'
+					})
+					ul.comment-list-reply
+						li
+							+box-comment({
+								imgName: 'user-2-86x86',
+								name: 'Peter Anderson',
+								time: 'October 5, 2019 at 1:44 pm',
+								exeption: 'Odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Ornare suspendisse sed nisi lacus sed viverra tellus in. Lectus magna fringilla urna porttitor rhoncus dolor. A condimentum vitae sapien pellentesque habitant. Feugiat nisl pretium fusce id velit ut tortor.'
+							})
+				li
+					+box-comment({
+						imgName: 'user-1-86x86',
+						name: 'Kate Wilson',
+						time: 'October 5, 2019 at 1:44 pm',
+						exeption: 'Sit amet massa vitae tortor condimentum lacinia quis vel eros. Dignissim sodales ut eu sem. Vitae et leo duis ut. Ultrices eros in cursus turpis. Ipsum dolor sit amet consectetur adipiscing elit pellentesque. Feugiat in ante metus dictum at tempor commodo ullamcorper.'
+					})
+
+	section.section.section-md.bg-default
+		.container
+			h6 Post a Comment
+			p Your email address will not be published. Required fields are marked *
+			form.rd-form.rd-mailform.form-boxed
+				.row.row-50
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-account-outline
+							input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+							label.form-label(for='contact-name') Name
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-email-outline
+							input#contact-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+							label.form-label(for='contact-email') E-mail
+
+					.col-lg-4
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-phone
+							input#contact-phone.form-input(type='text' name='phone' data-constraints='@Numeric')
+							label.form-label(for='contact-phone') Phone
+
+					.col-12
+						.form-wrap.form-wrap-icon
+							.form-icon.mdi.mdi-message-outline
+							label.form-label(for='contact-message') Message
+							textarea#contact-message.form-input(name='message' data-constraints='@Required')
+
+					.col-md-12
+						button.button.button-default(type='submit') Submit
+
+
+	// Page Footer
+	include ../sections/_footer-dark

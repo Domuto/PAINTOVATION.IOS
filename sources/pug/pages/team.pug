@@ -1,0 +1,94 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Team'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'People behind our success',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Team
+	section.section.section-lg.bg-default
+		.container
+			.row.row-15.row-gutter-14
+				.col-sm-6.col-lg-4
+					+team-box({
+						imgName: 'team-1-380x332',
+						name: 'Peter Wilson',
+						position: 'SENIOR PAINTER'
+					})
+				.col-sm-6.col-lg-4
+					+team-box({
+						imgName: 'team-2-380x332',
+						name: 'Nicholas Walker',
+						position: 'SENIOR ESTIMATOR'
+					})
+				.col-sm-6.col-lg-4
+					+team-box({
+						imgName: 'team-3-380x332',
+						name: 'Jane Smith',
+						position: 'ESTIMATOR'
+					})
+				.col-sm-6.col-lg-4
+					+team-box({
+						imgName: 'team-4-380x332',
+						name: 'Sam Robinson',
+						position: 'Office Manager'
+					})
+				.col-sm-6.col-lg-4
+					+team-box({
+						imgName: 'team-5-380x332',
+						name: 'Ann Clarke',
+						position: 'Project Manager'
+					})
+				.col-sm-6.col-lg-4
+					+team-box({
+						imgName: 'team-6-380x332',
+						name: 'Gary Hughes',
+						position: 'Painter'
+					})
+
+	// Careers
+	section.section.section-lg.bg-default
+		.container
+			h4.custom-title Join us today
+			table.table-custom.table-custom-responsive.table-custom-align
+				tr
+					td
+						.icon.icon-md.icon-gray-300.linearicons-pen3
+					td
+						.heading-5 Project Manager
+					td
+						.big.exeption May 10, 2019
+					td
+						a(href="#").button.button-default Get in touch
+
+				tr
+					td
+						.icon.icon-md.icon-gray-300.linearicons-smartphone-embed
+					td
+						.heading-5 Painter
+					td
+						.big.exeption May 10, 2019
+					td
+						a(href="#").button.button-default Get in touch
+
+				tr
+					td
+						.icon.icon-md.icon-gray-300.linearicons-pie-chart
+					td
+						.heading-5 Paint Finisher
+					td
+						.big.exeption May 10, 2019
+					td
+						a(href="#").button.button-default Get in touch
+
+	// Page Footer
+	include ../sections/_footer-dark

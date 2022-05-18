@@ -1,0 +1,98 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Typography'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Lots of customization options',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Base typography 
+	section.section.section-sm.bg-default
+		.container
+			.row
+				.col-xl-12
+					ul.list-xl
+						li
+							h1 H1 Heading
+							p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						li
+							h2 H2 Heading
+							p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						li
+							h3 H3 Heading
+							p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						li
+							h4 H4 Heading
+							p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+						li
+							h5 H5 Heading
+							p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+						li
+							h6 H6 Heading
+							p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+	// HTML Text Elements
+	section.section.bg-default
+		.container
+			.row
+				.col-lg-10.col-xl-8
+					h4 HTML Text Elements
+					p.text-block
+						span Welcome to our wonderful world. This is a bold text
+						mark This is a highlighted text
+						span We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login
+						span.tooltip-custom(data-toggle='tooltip' data-placement="top" title="Tooltips") Tooltips
+						span widgets, you will definitely have a great experience of using our web page.
+						span.text-strike This is a strickethrough text
+						span.text-underline This is an underlined text.
+						a(href='#') Link Hover
+						a(href='#').link-press Press link
+
+	// Unordered List
+	section.section.section-sm.bg-default
+		.container
+			h4 Ordered & Unordered Lists
+			.row.row-30
+				.col-md-6.col-xl-3
+					ul.list-marked
+						li Consulting
+						li Customer Service
+						li Innovation
+						li Management
+						li Ethics
+				.col-md-6.col-xl-3
+					ol.list-ordered
+						li Consulting
+						li Customer Service
+						li Innovation
+						li Management
+						li Ethics
+
+	// Blockquote
+	section.section.section-sm.bg-default
+		.container
+			.row.row-50
+				.col-lg-8.col-xl-5
+					h4 Blockquote
+					// Quote Primary
+					article.quote-simple
+						.quote-simple-body
+							q Morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor.
+						.quote-simple-footer
+							cite.heading-5.quote-simple-cite Jane Smith
+							span.quote-simple-description Designer
+
+	// Page Footer
+	include ../sections/_footer-dark

@@ -1,0 +1,39 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Buttons'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Lots of customization options',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Button Sizes
+	section.section.section-md.bg-default
+		.container
+			h4 Button Sizes
+			.group-xl.group-middle
+				.button.button-lg.button-primary Large size
+				.button.button-primary Medium size
+				.button.button-sm.button-primary Small size
+
+	// Buttons with Icons
+	section.section.section-md.bg-default
+		.container
+			h4 Buttons with Icons
+			.group-xl.group-middle
+				.button.button-icon.button-icon-right.button-light
+					span.icon.mdi.mdi-chevron-right
+					| Icon right
+				.button.button-icon.button-icon-left.button-right.button-light
+					span.icon.mdi.mdi-chevron-right
+					| Icon left
+
+	// Page Footer
+	include ../sections/_footer-dark

@@ -1,0 +1,82 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'services'
+	- var pageName = 'Services'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Solutions that we provide to our customers',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Blurb boxed
+	section.section.section-md.bg-default
+		.container.container.container-custom-width-1
+			.row.row-30.row-xxl-60.row-flex.row-custom
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-bucket',
+						title: 'Interior Painting'
+					})
+						ul.blurb-boxed-list
+							li: a(href="single-service.html") Living Rooms
+							li: a(href="single-service.html") Kitchens
+							li: a(href="single-service.html") Dining Rooms
+
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-tags',
+						title: 'Exterior Painting'
+					})
+						ul.blurb-boxed-list
+							li: a(href="single-service.html") Aluminum Siding
+							li: a(href="single-service.html") Patios
+							li: a(href="single-service.html") Wood
+
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-brush2',
+						title: 'Deck Staining'
+					})
+						ul.blurb-boxed-list
+							li: a(href="single-service.html") Scraping
+							li: a(href="single-service.html") Power Wash
+							li: a(href="single-service.html") Sanding
+
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-city',
+						title: 'Commercial'
+					})
+						ul.blurb-boxed-list
+							li: a(href="single-service.html") Industrial Painting
+							li: a(href="single-service.html") Color Restoration
+							li: a(href="single-service.html") Exterior maintenance
+
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-paint-roller',
+						title: 'Special Finishes'
+					})
+						ul.blurb-boxed-list
+							li: a(href="single-service.html") Faux Painting
+							li: a(href="single-service.html") Wood Graining
+							li: a(href="single-service.html") Multi-color Finishes
+
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-bubble-text',
+						title: 'Consulting'
+					})
+						ul.blurb-boxed-list
+							li: a(href="single-service.html") Color Consultations
+							li: a(href="single-service.html") Color Matching
+							li: a(href="single-service.html") Color Scheme Selection
+
+	// Page Footer
+	include ../sections/_footer-dark

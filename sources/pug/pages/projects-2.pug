@@ -1,0 +1,75 @@
+extends  ../_skeleton
+
+block variables
+	- var activeCategory = 'portfolio'
+	- var pageName = 'Projects 2'
+
+block page 
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Take a look at our latest projects',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Projects masonry
+	section.section.section-lg.bg-default
+		.container.container-custom-width-1
+			.row.isotope-wrap
+				// Isotope Content
+				.col-lg-12
+					.isotope.row.row-20.row-gutter-20(data-isotope-layout="masonry", data-column-class=".col-1")
+						.col-xs-12.col-sm-6.col-xl-7.isotope-item.isotope-col
+							+project-masonry({
+								imgBackground: 'home-project-1-729x398',
+								title: '509 Dogwood Street',
+								exeption: 'Tincidunt arcu non sodales neque sodales ut etiam sit.',
+								link: 'single-project.html'
+							})
+						.col-xs-12.col-sm-6.col-xl-5.isotope-item
+							+project-masonry({
+								addClass: 'project-masonry-1',
+								imgBackground: 'home-project-2-608x604',
+								title: '730 W. Cardinal St.',
+								exeption: 'Tincidunt arcu non sodales neque sodales ut etiam sit.',
+								link: 'single-project.html'
+							})
+						.col-xs-12.col-sm-6.col-xl-7.isotope-item
+							+project-masonry({
+								addClass: 'project-masonry-2',
+								imgBackground: 'home-project-3-729x624',
+								title: '8 North Brewery Rd.',
+								exeption: 'Tincidunt arcu non sodales neque sodales ut etiam sit.',
+								link: 'single-project.html'
+							})
+						.col-xs-12.col-sm-6.col-xl-5.isotope-item
+							+project-masonry({
+								addClass: 'project-masonry-3',
+								imgBackground: 'home-project-4-608x427',
+								title: '8362 Pearl Street',
+								exeption: 'Tincidunt arcu non sodales neque sodales ut etiam sit.',
+								link: 'single-project.html'
+							})
+						.col-xs-12.col-sm-6.col-xl-5.isotope-item
+							+project-masonry({
+								addClass: 'project-masonry-4',
+								imgBackground: 'home-project-5-608x398',
+								title: '278 Cobblestone Rd.',
+								exeption: 'Tincidunt arcu non sodales neque sodales ut etiam sit.',
+								link: 'single-project.html'
+							})
+						.col-xs-12.col-sm-6.col-xl-7.isotope-item
+							+project-masonry({
+								addClass: 'project-masonry-4',
+								imgBackground: 'home-project-6-729x398',
+								title: '371 Griffin Street',
+								exeption: 'Tincidunt arcu non sodales neque sodales ut etiam sit.',
+								link: 'single-project.html'
+							})
+						.col-1.isotope-item
+
+
+	// Page Footer
+	include ../sections/_footer-dark

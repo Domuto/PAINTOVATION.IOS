@@ -1,0 +1,118 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-progress-bar-linear
+include ../components/_ui-counter
+
+block variables
+	- var activeCategory = 'pages'
+	- var pageName = 'Icon lists'
+
+block page  
+	// Page Header
+	include ../sections/_header-wide
+
+	+breadcrumbs({
+		title: pageName,
+		subtitle: 'Lots of customization options',
+		bgImage: 'breadcrumbs-bg-6.jpg'
+	})
+
+	// Blurb minimal
+	section.section.section-lg.bg-default
+		.container
+			.row.row-40
+				.col-sm-6.col-md-4.wow.fadeInUp
+					// Blurb minimal
+					+blurb-minimal({
+						icon: 'linearicons-diamond',
+						title: 'Best Service',
+						exeption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+					})
+
+				.col-sm-6.col-md-4.wow.fadeInUp(data-wow-delay="0.2s")
+					// Blurb minimal
+					+blurb-minimal({
+						icon: 'linearicons-chip',
+						title: 'Reputation',
+						exeption: 'Natoque penatibus et magnis dis parturient montes egestas.'
+					})
+
+				.col-sm-6.col-md-4.wow.fadeInUp(data-wow-delay="0.4s")
+					// Blurb minimal
+					+blurb-minimal({
+						icon: 'linearicons-heart-pulse',
+						title: 'Safety & Security',
+						exeption: 'Eleifend mi in nulla posuere sollicitudin aliquam ultrices.'
+					})
+
+	// Blurb hover
+	section.section.section-md.bg-gray-700.context-dark
+		.container
+			.row.row-40.row-flex.number-counter
+				.col-sm-6.col-lg-3
+					+blurb-hover({
+						icon: 'linearicons-transform',
+						title: 'Best Service',
+						exeption: 'Natoque penatibus et magnis dis parturient montes placerat dignissim.'
+					})
+
+				.col-sm-6.col-lg-3
+					+blurb-hover({
+						addClass: 'blurb-hover-secondary',
+						icon: 'linearicons-chip',
+						title: 'Reputation',
+						exeption: 'Felis donec et odio pellentesque diam volutpat commodo sed egestas.'
+					})
+
+				.col-sm-6.col-lg-3
+					+blurb-hover({
+						addClass: 'blurb-hover-gray',
+						icon: 'linearicons-cube',
+						title: 'Safety & Security',
+						exeption: 'Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim.'
+					})
+
+				.col-sm-6.col-lg-3
+					+blurb-hover({
+						icon: 'linearicons-diamond',
+						title: 'Dedication',
+						exeption: 'Turpis egestas maecenas pharetra convallis posuere morbi euismod .'
+					})
+
+	// Blurb boxed
+	section.section.section-md.bg-default
+		.container
+			.row.row-30.row-flex
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-cube',
+						title: 'Interior Painting'
+					})
+						ul.blurb-boxed-list
+							li: a(href="#") Living Rooms
+							li: a(href="#") Kitchens
+							li: a(href="#") Dining Rooms
+
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-pencil3',
+						title: 'Exterior Painting'
+					})
+						ul.blurb-boxed-list
+							li: a(href="#") Aluminum Siding
+							li: a(href="#") Patios
+							li: a(href="#") Wood
+
+				.col-sm-6.col-md-4
+					+blurb-boxed({
+						icon: 'linearicons-lamp',
+						title: 'Deck Staining'
+					})
+						ul.blurb-boxed-list
+							li: a(href="#") Scraping
+							li: a(href="#") Power Wash
+							li: a(href="#") Sanding
+
+	// Page Footer
+	include ../sections/_footer-dark
